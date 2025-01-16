@@ -90,7 +90,7 @@ creative_commons:
   license: by-nc-sa
   sidebar: false
   post: false
-  language:
+  language: zh-Hans
 
 
 # ---------------------------------------------------------------
@@ -98,8 +98,8 @@ creative_commons:
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse
-scheme: Mist
+scheme: Muse
+#scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
 
