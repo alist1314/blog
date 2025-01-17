@@ -71,29 +71,29 @@ avatar:
 disable_top_img: false
 
 # 如果页面未设置横幅，则显示默认的横幅图片
-default_top_img:
+default_top_img: /img/default.png
 
 # 主页的横幅图片
 index_img: /img/default.png
 
 # 归档页的横幅图片
-archive_img:
+archive_img: /img/default.png
 
 # 注意: 是标签页（单个标签），不是标签页面（所有标签）
-tag_img:
+tag_img: /img/default.png
 
 # 标签页的横幅图片，可以为每个标签设置横幅图片
 # 格式:
 #  - 标签名: 图片链接
-tag_per_img:
+tag_per_img: /img/default.png
 
 # 注意: 是分类页（单个分类），不是分类页面（所有分类）
-category_img:
+category_img: /img/default.png
 
 # 分类页的横幅图片，可以为每个分类设置横幅图片
 # 格式:
 #  - 分类名: 图片链接
-category_per_img:
+category_per_img: /img/default.png
 
 # 页脚的背景图片
 footer_img: false
@@ -175,7 +175,7 @@ index_top_img_height: 500px
 # 首页的副标题设置
 subtitle:
   # 是否启用副标题
-  enable: false
+  enable: true
   # 是否启用打字机效果
   effect: true
   # 自定义 typed.js
@@ -190,7 +190,7 @@ subtitle:
   # 3 - jinrishici.com
   source: false
   # 如果关闭打字机效果，副标题将仅显示 sub 的第一行内容
-  sub:
+  sub: 好好学习，天天向上
 
 # 首页文章佈局
 # 1: 行佈局
