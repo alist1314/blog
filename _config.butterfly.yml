@@ -111,7 +111,7 @@ cover:
   archives_enable: true
   # 主页封面的位置
   # 选择: left/right/both
-  position: both
+  position: left
   # 当未设置封面时，显示默认封面
   default_cover:
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
@@ -310,7 +310,7 @@ aside:
   # 是否启用侧边栏
   enable: true
   # 是否默认隐藏侧边栏
-  hide: false
+  hide: true
   # 是否在右下角显示隐藏侧边栏的按钮
   button: true
   # 移动设备上是否启用侧边栏
@@ -342,7 +342,7 @@ aside:
     # 是否显示公告卡片
     enable: true
     # 公告内容
-    content: This is my Blog
+    content: 好好学习，天天向上！
   card_recent_post:
     # 是否显示最近文章卡片
     enable: true
@@ -425,7 +425,7 @@ rightside_bottom:
 # 简繁转换设置
 translate:
   # 是否启用简繁转换
-  enable: false
+  enable: true
   # 按钮文本
   default: 繁
   # 网站语言（1 - 繁体中文 / 2 - 简体中文）
