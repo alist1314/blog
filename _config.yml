@@ -99,7 +99,7 @@ ignore:
 #theme: landscape
 #theme: butterfly
 theme: next
-#theme: next
+#theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
