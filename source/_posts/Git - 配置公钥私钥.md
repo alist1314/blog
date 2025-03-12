@@ -8,7 +8,7 @@ tags:
 - 软件
 - 技术
 title: Git - 配置公钥私钥
-updated: 2024-03-7
+updated: '2025-03-12T15:19:55.306+08:00'
 ---
 - [before](https://www.cnblogs.com/bubu99/articles/17924054.html#before)
 - [方案一，明文添加用户名和密码(不推荐)](https://www.cnblogs.com/bubu99/articles/17924054.html#%E6%96%B9%E6%A1%88%E4%B8%80%E6%98%8E%E6%96%87%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E4%B8%8D%E6%8E%A8%E8%8D%90)
@@ -128,7 +128,7 @@ c/Users/12061/.ssh/id_rsa.pub  # 公钥，你可以在本地通过文本文件�
 cat ~/.ssh/id_rsa.pub
 ```
 
-![](https://cdn.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230524113942678-1339203127.png)
+![](https://gcore.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230524113942678-1339203127.png)
 
 **Mac系统**
 
@@ -137,16 +137,16 @@ cat ~/.ssh/id_rsa.pub
 cat ~/.ssh/id_rsa.pub
 ```
 
-![](https://cdn.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230524101752440-1505196840.png)
+![](https://gcore.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230524101752440-1505196840.png)
 
 在本地拿到了公钥，接下来就需要将公钥拷贝到远程仓库的相关配置中了，我这里截图以码云为例。
 
-![](https://cdn.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230604105456666-1547237928.png)
+![](https://gcore.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230604105456666-1547237928.png)
 
 再然后，就是将remote add一个ssh的连接了。
 拷贝ssh链接。
 
-![](https://cdn.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230604105513054-1151157163.png)
+![](https://gcore.jsdelivr.net/gh/skyboy520/picture/picture/1168165-20230604105513054-1151157163.png)
 
 然后git bash中执行：
 
@@ -158,3 +158,5 @@ git remote add origin git@gitee.com:wangzhangkai/ppqb.git
 ```
 
 完事你提交代码就不需要输入用户名和密码了。
+
+
