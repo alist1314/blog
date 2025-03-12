@@ -4,11 +4,11 @@ categories: []
 date: '2024-08-09T06:27:44.629358+08:00'
 tags: []
 title: WPS各大高校定制版下载
-updated: '2024-08-09T06:27:47.482+08:00'
+updated: '2025-03-12T15:17:54.722+08:00'
 ---
 > WPS是金山公司开发的一款办公软件，包括WPS文字、WPS演示和WPS表格三个应用程序。WPS的设计风格简洁，操作简单易用，功能强大，完全兼容Microsoft Office格式，可以满足用户多种办公需求。WPS的使用范围广泛，包括但不限于个人、学生、企业等各种用户群体。WPS还提供了云端存储和分享功能，便于用户在不同设备之间进行文档共享和协作。
 
-![image-20231114194550646](https://pic.edunote.cn/i/2023/11/14/65535df04b921.png "image-20231114194550646")
+
 
 #### 云南师范大学定制版：
 
@@ -47,3 +47,4 @@ https://www.sjziei.edu.cn/jyjszx/info/1162/1234.htm
 ##### 金山云盘：[西北大学][https://kdocs.cn/l/caBiQxAlvYij](https://kdocs.cn/l/caBiQxAlvYij)
 
 0
+
