@@ -4,7 +4,7 @@ categories: []
 date: '2025-01-10T14:49:06.933284+08:00'
 tags: []
 title: Github Action自动化部署Hexo博客和Qexo管理后台
-updated: '2025-01-10T14:55:38.164+08:00'
+updated: '2025-03-12T14:11:36.917+08:00'
 ---
 ## 一、Hexo博客搭建
 
@@ -80,7 +80,7 @@ hexo g hexo s
 \*\*hexo generate 顾名思义，生成静态文章，可以用 hexo g缩写
 hexo server 顾名思义，启动服务 本地运行，可以用 hexo s缩写\*\*
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/cwjgGK71MCNfdZs.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/cwjgGK71MCNfdZs.png "img")
 
 **在浏览器输入 localhost:4000 就可以看到你生成的博客了。**
 
@@ -90,13 +90,13 @@ hexo server 顾名思义，启动服务 本地运行，可以用 hexo s缩写\*\
 
 **没有账号的注册一个，登录后，点击右上角New repository**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/4LpOVPulA9TvzSW.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/4LpOVPulA9TvzSW.png "img")
 
 **创建一个和你用户名相同的仓库，后面加.github.io，只有这样，将来要部署到GitHub page的时候，才会被识别，也就是xxx.github.io，其中xxx就是你注册GitHub的用户名。我这里是已经建过了。点击create repository。**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/FeSIjDi4NHEKkJL.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/FeSIjDi4NHEKkJL.png "img")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/FeSIjDi4NHEKkJL.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/FeSIjDi4NHEKkJL.png "img")
 
 ### 5\. 生成SSH添加到GitHub
 
@@ -113,11 +113,11 @@ git config --global user.name "yourname" git config --global user.email "yourema
 \*\*点击GitHub的右上角setting中 -> 点击左边SSH and GPG keys -> 点击New SSH key
 title随便填，把C盘的id\_rsa.pub里面的信息复制到key里。\*\*
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/cjrSbQYHB41J2GL.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/cjrSbQYHB41J2GL.png "img")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d61e7f2dbfd-1736471588423-5.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d61e7f2dbfd-1736471588423-5.png "img")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d61e9260a3c-1736471588423-7.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d61e9260a3c-1736471588423-7.png "img")
 
 **查看是否成功**
 
@@ -143,7 +143,7 @@ deploy: type: git repo: git@github.com:1422756921/1422756921.github.io.git branc
 npm install hexo-deployer-git --save
 ```
 
-**然后其中`hexo clean`清除了你之前生成的东西，`hexo deploy` 部署文章，可以用`hexo d`缩写**
+**然后其中 `hexo clean`清除了你之前生成的东西，`hexo deploy` 部署文章，可以用 `hexo d`缩写**
 
 ```shell
 hexo clean hexo g hexo deploy
@@ -163,55 +163,55 @@ hexo clean hexo g hexo deploy
 
 **先建一个私有仓库（myhexo），这个仓库存放的是编译前的文件，也就是你电脑本地的文件，这个仓库是拿来做自动化的**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d62048009d1-1736471588423-9.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d62048009d1-1736471588423-9.png "img")
 
 **也就是一共两个仓库**
 
-- 一个公有仓库存编译好的hexo（pages仓库，用户名例如是`1422756921.github.io`）
-- 一个私有仓库存**本地电脑编译前**的文件（自动化仓库，用户名是`myhexo`）
+- 一个公有仓库存编译好的hexo（pages仓库，用户名例如是 `1422756921.github.io`）
+- 一个私有仓库存**本地电脑编译前**的文件（自动化仓库，用户名是 `myhexo`）
 
 ### 2、上传编译前的代码
 
-**创建完私有仓库后，在本地博客文件中复制几个文件到另外一个文件夹，其中包括`.github`，`scaffolds`，`source`，`themes`，`_config.yml`，`package.json`，`package-lock.json`**
+**创建完私有仓库后，在本地博客文件中复制几个文件到另外一个文件夹，其中包括 `.github`，`scaffolds`，`source`，`themes`，`_config.yml`，`package.json`，`package-lock.json`**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d620d3cac02-1736471588423-11.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d620d3cac02-1736471588423-11.png "img")
 
-**还有一个很重要的一步：打开themes/bamboo主题模板文件，[主题源码](https://github.com/yuang01/hexo-theme-bamboo)`.git`文件删除，Hexo博客根目录修改配置文件使用bamboo主题**
+**还有一个很重要的一步：打开themes/bamboo主题模板文件，[主题源码](https://github.com/yuang01/hexo-theme-bamboo) `.git`文件删除，Hexo博客根目录修改配置文件使用bamboo主题**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d620f1b2160-1736471588423-13.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d620f1b2160-1736471588423-13.png "img")
 
 **然后回到myhexo根目录右键打开git bash**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d621269953c-1736471588423-15.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d621269953c-1736471588423-15.png "img")
 
 ```shell
 git init #把这个目录变成Git可以管理的仓库 git add . #添加当前目录文件到缓存区（别漏命令后面的点） git commit -m "first commit" #提交缓存区内容到本地库，并备注first commit #下面两条命令二选一，就行了 git remote add origin https://github.com/用户名/自动化仓库名.git #利用https关联远程仓库 git remote add origin git@github.com:用户名/自动化仓库名.git #利用ssh关联远程仓库 git push -u origin master #把本地库的所有内容推送到远程库上
 ```
 
-**同样`SSH`和`HTTPS`均可。`SSH`在绑定过`ssh key`的设备上无需再输入密码，`HTTPS`则需要输入密码，但是`SSH`偶尔会遇到端口占用的情况。**
+**同样 `SSH`和 `HTTPS`均可。`SSH`在绑定过 `ssh key`的设备上无需再输入密码，`HTTPS`则需要输入密码，但是 `SSH`偶尔会遇到端口占用的情况。**
 
 ### 3、获取 Github token
 
 **打开[https://github.com/settings/tokens](https://github.com/settings/tokens)**
 **点击 Generate new token 新建个 token**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d621749f0ce-1736471588423-17.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d621749f0ce-1736471588423-17.png "img")
 
 **note随便填，Expiration选择No expiration，勾选repo和workflow，其他没什么了，然后点生成就好了**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d62197a24cd-1736471588423-19.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d62197a24cd-1736471588423-19.png "img")
 
 **把token复制下来**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d621a94ed08-1736471588424-21.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d621a94ed08-1736471588424-21.png "img")
 
-**打开自动化仓库myhexo的`Settings` \-> `Secrets and variables` -> `Actions` -> `New repository secret`**
+**打开自动化仓库myhexo的 `Settings` \-> `Secrets and variables` -> `Actions` -> `New repository secret`**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d621c8d8f29-1736471588424-23.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d621c8d8f29-1736471588424-23.png "img")
 
-**一共有三个变量名`GITHUBTOKEN`，`GITHUBUSERNAME`，`GITHUBEMAIL`，逐一添加**
+**一共有三个变量名 `GITHUBTOKEN`，`GITHUBUSERNAME`，`GITHUBEMAIL`，逐一添加**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d621d996fc4-1736471588424-25.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d621d996fc4-1736471588424-25.png "img")
 
 | 变量名         | 常量释义            |
 | -------------- | ------------------- |
@@ -221,9 +221,9 @@ git init #把这个目录变成Git可以管理的仓库 git add . #添加当前�
 
 ### 4、添加workflows
 
-**接下来点击`Actions` \-> `set up a workflow yourself`**
+**接下来点击 `Actions` \-> `set up a workflow yourself`**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d62210d2f08-1736471588424-27.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d62210d2f08-1736471588424-27.png "img")
 
 **复制以下代码到里面**
 
@@ -233,15 +233,15 @@ name: 自动部署 on: push: branches: - master release: types: - published jobs
 
 **粘贴上去后点击Commit changes...**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d6225de7457-1736471588424-29.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d6225de7457-1736471588424-29.png "img")
 
 **就大功告成了，可以点击Actions查看运行进程了**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d622726ecd5-1736471588425-31.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d622726ecd5-1736471588425-31.png "img")
 
 **最后，需要到GitHub pages那个仓库里面把默认页改成master就好了**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d6229ac9982-1736471588425-33.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d6229ac9982-1736471588425-33.png "img")
 
 ## 三、搭建Hexo博客后台管理Qexo
 
@@ -251,29 +251,29 @@ name: 自动部署 on: push: branches: - master release: types: - published jobs
 
 **首先我们要去[注册](https://www.mongodb.com/cloud/atlas/register)MongoDB来给Qexo提供数据库，选择Free计划**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d62437e0fd6-1736471588425-35.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d62437e0fd6-1736471588425-35.png "img")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d6245bdbaf2-1736471588426-37.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d6245bdbaf2-1736471588426-37.png "img")
 
 **新建成功后会自动跳到”Security”的”Quickstart”**
 
 记住username，密码，之后需要连接数据库
 
-![image-20230811200842458](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d624ca0ced5-1736471588427-39.png "image-20230811200842458")
+![image-20230811200842458](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d624ca0ced5-1736471588427-39.png "image-20230811200842458")
 
 **等待几分钟数据库新建完成后，允许所有IP段访问（0.0.0.0）**
 
-![image-20230811200943929](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d625076eebe-1736471588427-41.png "image-20230811200943929")
+![image-20230811200943929](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d625076eebe-1736471588427-41.png "image-20230811200943929")
 
 **进入刚刚建立好的数据库总览页面，点击Connect**
 
-![image-20230811201051740](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d6254b5eb5a-1736471588428-43.png "image-20230811201051740")
+![image-20230811201051740](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d6254b5eb5a-1736471588428-43.png "image-20230811201051740")
 
 **然后连接方式选择MangoDB Shell**
 
-![image-20230811201241934](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d6259dce953-1736471588428-45.png "image-20230811201241934")
+![image-20230811201241934](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d6259dce953-1736471588428-45.png "image-20230811201241934")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d625d2348ad-1736471588428-47.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d625d2348ad-1736471588428-47.png "img")
 
 ### 2、部署到Vercel
 
@@ -283,7 +283,7 @@ name: 自动部署 on: push: branches: - master release: types: - published jobs
 
 **第一次部署会直接爆炸，问题不大，这是因为我们还没有设置数据库，请无视并重新进入项目, 在项目设置界面添加环境变量 Environment Variables**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d626804e3ef-1736471588428-49.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d626804e3ef-1736471588428-49.png "img")
 
 **照着下列表格来添加**
 
@@ -297,36 +297,37 @@ name: 自动部署 on: push: branches: - master release: types: - published jobs
 
 **添加完之后到顶部的”Deployments”然后”Redeploy”**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d626b9cef84-1736471588428-51.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d626b9cef84-1736471588428-51.png "img")
 
 ### 3、初始化Qexo
 
 **若没有 Error 信息即可打开域名进入初始化引导**
 
-![image-20230811201918647](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d62746365ff-1736471588428-53.png "image-20230811201918647")
+![image-20230811201918647](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d62746365ff-1736471588428-53.png "image-20230811201918647")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d6276e5eb61-1736471588428-55.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d6276e5eb61-1736471588428-55.png "img")
 
 **之前于 [Github 设置](https://github.com/settings/tokens) 生成的 Token (建议使用 Classic) 可以填以下栏目，需要 Repo & Workflow 下的权限 _不建议给出所有权限_**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d627ade2672-1736471588428-57.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d627ade2672-1736471588428-57.png "img")
 
 **您的 Vercel 账户密钥 在 [此处](https://vercel.com/account/tokens) 生成**
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d627e019779-1736471588428-59.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d627e019779-1736471588428-59.png "img")
 
 Qexo 部署所在项目的 ID 位于项目的 Settings -> General -> Project ID
 
 `prj_xxxxxxxxxxxxx`
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d6284170dea-1736471588428-61.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d6284170dea-1736471588428-61.png "img")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d627fec35c9-1736471588429-63.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d627fec35c9-1736471588429-63.png "img")
 
-![img](https://cdn.jsdelivr.net/gh/alist1314/picture@main/pic/64d62809cfb1d-1736471588429-65.png "img")
+![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d62809cfb1d-1736471588429-65.png "img")
 
 **最终大功告成**
 
 **祝你使用愉快**
 原文链接： [https://isedu.top/index.php/archives/144/](https://isedu.top/index.php/archives/144/)
+
 
