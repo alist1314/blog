@@ -185,7 +185,15 @@ hexo clean hexo g hexo deploy
 ![img](https://gcore.jsdelivr.net/gh/alist1314/picture@main/pic/64d621269953c-1736471588423-15.png "img")
 
 ```shell
-git init #把这个目录变成Git可以管理的仓库 git add . #添加当前目录文件到缓存区（别漏命令后面的点） git commit -m "first commit" #提交缓存区内容到本地库，并备注first commit #下面两条命令二选一，就行了 git remote add origin https://github.com/用户名/自动化仓库名.git #利用https关联远程仓库 git remote add origin git@github.com:用户名/自动化仓库名.git #利用ssh关联远程仓库 git push -u origin master #把本地库的所有内容推送到远程库上
+git init  #把这个目录变成Git可以管理的仓库
+git add .   #添加当前目录文件到缓存区（别漏命令后面的点）
+git commit -m "first commit"  #提交缓存区内容到本地库，并备注first commit
+
+#下面两条命令二选一，就行了
+git remote add origin https://github.com/用户名/自动化仓库名.git   #利用https关联远程仓库
+git remote add origin git@github.com:用户名/自动化仓库名.git   #利用ssh关联远程仓库
+
+git push -u origin master  #把本地库的所有内容推送到远程库上
 ```
 
 **同样 `SSH`和 `HTTPS`均可。`SSH`在绑定过 `ssh key`的设备上无需再输入密码，`HTTPS`则需要输入密码，但是 `SSH`偶尔会遇到端口占用的情况。**
@@ -228,7 +236,62 @@ git init #把这个目录变成Git可以管理的仓库 git add . #添加当前�
 **复制以下代码到里面**
 
 ```shell
-name: 自动部署 on: push: branches: - master release: types: - published jobs: deploy: runs-on: ubuntu-latest steps: - name: 检查分支 uses: actions/checkout@v2 with: ref: master - name: 安装 Node uses: actions/setup-node@v1 with: node-version: "16.x" - name: 安装 Hexo run: | export TZ='Asia/Shanghai' npm install hexo-cli -g - name: 缓存 Hexo uses: actions/cache@v1 id: cache with: path: node_modules key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}} - name: 安装依赖 if: steps.cache.outputs.cache-hit != 'true' run: | npm install --save - name: 生成静态文件 run: | hexo clean hexo generate - name: 部署 #此处master:master 指从本地的master分支提交到远程仓库的master分支(不是博客的分支写master即可)，若远程仓库没有对应分支则新建一个。如有其他需要，可以根据自己的需求更改。 run: | cd ./public git init git config --global user.name '${{ secrets.GITHUBUSERNAME }}' git config --global user.email '${{ secrets.GITHUBEMAIL }}' git add . git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") Updated By Github Actions" git push --force --quiet "https://${{ secrets.GITHUBUSERNAME }}:${{ secrets.GITHUBTOKEN }}@github.com/${{ secrets.GITHUBUSERNAME }}/${{ secrets.GITHUBUSERNAME }}.github.io.git" master:master # GitHub配置
+name: 自动部署
+
+on:
+  push:
+	branches:
+	  - master
+
+  release:
+	types:
+	  - published
+
+jobs:
+  deploy:
+	runs-on: ubuntu-latest
+	steps:
+	- name: 检查分支
+	  uses: actions/checkout@v4
+	  with:
+		ref: master
+
+	- name: 安装 Node
+	  uses: actions/setup-node@v4
+	  with:
+		node-version: "18.x"
+
+	- name: 安装 Hexo
+	  run: |
+		export TZ='Asia/Shanghai'
+		npm install hexo-cli -g
+
+	- name: 缓存 Hexo
+	  uses: actions/cache@v4
+	  id: cache
+	  with:
+		path: node_modules
+		key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+
+	- name: 安装依赖
+	  if: steps.cache.outputs.cache-hit != 'true'
+	  run: |
+		npm install --save
+
+	- name: 生成静态文件
+	  run: |
+		hexo clean
+		hexo generate
+
+	- name: 部署 #此处master:master 指从本地的master分支提交到远程仓库的master分支(不是博客的分支写master即可)，若远程仓库没有对应分支则新建一个。如有其他需要，可以根据自己的需求更改。
+	  run: |
+		cd ./public
+		git init
+		git config --global user.name '${{ secrets.GITHUBUSERNAME }}'
+		git config --global user.email '${{ secrets.GITHUBEMAIL }}'
+		git add .
+		git commit -m "${{ github.event.head_commit.message }} $(date +"%Z %Y-%m-%d %A %H:%M:%S") Updated By Github Actions"
+		git push --force --quiet "https://${{ secrets.GITHUBUSERNAME }}:${{ secrets.GITHUBTOKEN }}@github.com/${{ secrets.GITHUBUSERNAME }}/${{ secrets.GITHUBUSERNAME }}.github.io.git" master:master  # GitHub配置
 ```
 
 **粘贴上去后点击Commit changes...**
@@ -329,5 +392,4 @@ Qexo 部署所在项目的 ID 位于项目的 Settings -> General -> Project ID
 
 **祝你使用愉快**
 原文链接： [https://isedu.top/index.php/archives/144/](https://isedu.top/index.php/archives/144/)
-
 
